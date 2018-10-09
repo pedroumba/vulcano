@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Vulcano - Reportes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let report of reports">
+     
+      <ion-thumbnail item-start>
+        <img src="../../assets/img/camera_outline.jpg">
+      </ion-thumbnail>
+     
+      <h6> {{ report.direccion }} </h6>     
+      <p>  {{ report.reporte }}   </p>
+      <p>  {{ report.usuario }} - {{ report.created_at}}  </p>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
+

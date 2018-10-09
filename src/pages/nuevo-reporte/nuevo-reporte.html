@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Vulcano - Nuevo Reporte
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <!-- <ion-icon name="cloud-outline"></ion-icon> -->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label color="primary">Usuario</ion-label>
+    <ion-input [(ngModel)]="inUsu"  placeholder="Anonimo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Direccion</ion-label>
+    <ion-input [(ngModel)]="inDirec" placeholder="Ubicacion del reporte"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label color="primary">Foto</ion-label>
+    <ion-input [(ngModel)]="inFoto" placeholder="Nombre del archivo"></ion-input>
+  </ion-item>
+  <ion-item>
+        <img src="../../assets/img/camera_outline.jpg">
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Reporte</ion-label>
+    <ion-textarea [(ngModel)]="inReporte" placeholder="Ingrese su reporte aqui"></ion-textarea>
+  </ion-item>
+
+  <!-- <button id="NuevoReporte-button15" block icon-left on-click="goToReportes()">
+    <ion-icon name="checkmark-circle"></ion-icon>
+    Enviar Reporte
+  </button> -->
+  
+    <div padding>
+      <button ion-button (click)="sendReport( { 'usuario':inUsu, 'direccion':inDirec, 'foto':inFoto, 'reporte':inReporte } )" block>Enviar Reporte</button>      
+    </div>    
+
+
+
+</ion-content>

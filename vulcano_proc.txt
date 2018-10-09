@@ -1,0 +1,48 @@
+# Generar Mokup con ionicreator, un proyecto sidemenu
+- Generar el esqueleto de paginas
+- exportarlo como zip
+
+# Instalar ionic
+npm install -g ionic
+
+# Generar proyecto ionic
+ionic start vulcano blank --cordova
+npm install cordova --save
+
+# Reeemplazar carpeta src de ionic con src de creator 
+- no se debe borrar la carpeta src solo reemplazar!!!
+- se deben arreglar las inconsistencias
+
+# Crear provider/service para consumir el API(BackEnd)
+- en D:\Cursos\fronend\vulcano\src\app\app.module.ts
+    import { HttpClientModule } from '@angular/common/http';
+    imports: [  HttpClientModule,
+ionic g provider apiservice
+- Verificar en: D:\Cursos\fronend\vulcano\src\app\app.module.ts
+    import { ApiserviceProvider } from '../providers/apiservice/apiservice';
+    providers: [    ApiserviceProvider,
+
+# Verificar API
+- ej: https://randomuser.me/api/?results=4
+
+# Obtener Reportes (GET)
+- en: D:\Cursos\fronend\vulcano\src\providers\apiservice\apiservice.ts
+    - dentro de: export class ApiserviceProvider {, crear el metodo par traer los Reportes
+        getReports() {
+            return this.http.get('https://apitestpumba.herokuapp.com/reports')   
+        }
+
+# Inyectar el servicio
+- en la pagina donde se visualizan reportes:
+    import { ApiserviceProvider } from '../../providers/apiservice/apiservice';
+    
+
+
+# Probar app con consola habilitada
+ionic serve -c
+
+# Error de CORS
+- para corregir este error instalar la extension Allow-Control-Allow-Origin: * en Chrome
+- arrancar el proyecto con Chrome
+    ionic serve -c -w chrome
+    
